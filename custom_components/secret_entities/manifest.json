@@ -1,0 +1,14 @@
+{
+  "domain": "secret_entities",
+  "name": "Secret Entities",
+  "version": "1.0.0",
+  "codeowners": [],
+  "config_flow": true,
+  "single_config_entry": true,
+  "dependencies": [],
+  "documentation": "https://github.com/Big-Gremlin/ha-secret-entities",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/Big-Gremlin/ha-secret-entities/issues",
+  "requirements": []
+}

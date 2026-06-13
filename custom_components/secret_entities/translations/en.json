@@ -1,0 +1,84 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Secret Entities",
+        "description": "Sets up the integration. Secrets are then managed in the options."
+      }
+    },
+    "abort": {
+      "already_configured": "Secret Entities is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Manage secrets",
+        "menu_options": {
+          "add": "Add secret",
+          "edit": "Edit secret",
+          "remove": "Remove secret"
+        }
+      },
+      "add": {
+        "title": "Add secret",
+        "data": {
+          "name": "Name",
+          "secret": "Value / password",
+          "icon": "Icon (optional)"
+        },
+        "data_description": {
+          "name": "E.g. \"Router password\". Shown as the entity name.",
+          "secret": "The plaintext. Encrypted immediately and never stored in clear."
+        }
+      },
+      "edit": {
+        "title": "Edit secret",
+        "data": {
+          "id": "Secret"
+        }
+      },
+      "edit_form": {
+        "title": "Edit {name}",
+        "data": {
+          "name": "Name",
+          "secret": "New value / password",
+          "icon": "Icon (optional)"
+        },
+        "data_description": {
+          "secret": "Leave empty to keep the current value. A new value is encrypted with a new key."
+        }
+      },
+      "remove": {
+        "title": "Remove secret",
+        "data": {
+          "id": "Secret"
+        }
+      }
+    },
+    "abort": {
+      "no_secrets": "No secrets have been created yet.",
+      "unknown_secret": "That secret no longer exists."
+    },
+    "error": {
+      "name_required": "Please provide a name.",
+      "secret_required": "Please provide a value."
+    }
+  },
+  "services": {
+    "decrypt": {
+      "name": "Decrypt",
+      "description": "Returns the decrypted value of a secret. The value is only delivered as the service response and never stored.",
+      "fields": {
+        "entity_id": {
+          "name": "Secret entity",
+          "description": "The sensor entity of the secret (alternative to Secret ID)."
+        },
+        "secret_id": {
+          "name": "Secret ID",
+          "description": "Internal ID of the secret (alternative to the entity)."
+        }
+      }
+    }
+  }
+}

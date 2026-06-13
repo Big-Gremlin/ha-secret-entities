@@ -1,0 +1,7 @@
+pytest>=7.4
+pytest-asyncio>=0.23
+# pytest-homeassistant-custom-component bundles a pinned Home Assistant.
+# The homeassistant floor forces a phacc release that ships HA 2026.1.0+
+# (which requires Python >= 3.13).
+homeassistant>=2026.1.0
+pytest-homeassistant-custom-component

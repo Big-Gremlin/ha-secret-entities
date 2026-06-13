@@ -1,0 +1,22 @@
+decrypt:
+  name: Entschlüsseln
+  description: >-
+    Gibt den entschlüsselten Wert eines Secrets zurück. Der Wert wird nur
+    als Service-Antwort geliefert und nirgendwo gespeichert (Schlüssel: ``value``).
+  fields:
+    entity_id:
+      name: Secret-Entität
+      description: Die Sensor-Entität des Secrets (Alternative zur Secret-ID).
+      required: false
+      selector:
+        entity:
+          filter:
+            - integration: secret_entities
+              domain: sensor
+    secret_id:
+      name: Secret-ID
+      description: Interne ID des Secrets (Alternative zur Entität).
+      required: false
+      example: a1b2c3d4
+      selector:
+        text:

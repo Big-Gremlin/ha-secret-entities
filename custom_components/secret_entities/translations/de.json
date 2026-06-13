@@ -1,0 +1,84 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Secret Entities",
+        "description": "Legt die Integration an. Secrets werden anschließend in den Optionen verwaltet."
+      }
+    },
+    "abort": {
+      "already_configured": "Secret Entities ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Secrets verwalten",
+        "menu_options": {
+          "add": "Secret hinzufügen",
+          "edit": "Secret bearbeiten",
+          "remove": "Secret löschen"
+        }
+      },
+      "add": {
+        "title": "Secret hinzufügen",
+        "data": {
+          "name": "Name",
+          "secret": "Wert / Passwort",
+          "icon": "Icon (optional)"
+        },
+        "data_description": {
+          "name": "Z.B. „Router-Passwort\". Wird als Entitätsname angezeigt.",
+          "secret": "Der Klartext. Wird sofort verschlüsselt und nicht im Klartext gespeichert."
+        }
+      },
+      "edit": {
+        "title": "Secret bearbeiten",
+        "data": {
+          "id": "Secret"
+        }
+      },
+      "edit_form": {
+        "title": "{name} bearbeiten",
+        "data": {
+          "name": "Name",
+          "secret": "Neuer Wert / Passwort",
+          "icon": "Icon (optional)"
+        },
+        "data_description": {
+          "secret": "Leer lassen, um den bisherigen Wert zu behalten. Ein neuer Wert wird mit einem neuen Schlüssel verschlüsselt."
+        }
+      },
+      "remove": {
+        "title": "Secret löschen",
+        "data": {
+          "id": "Secret"
+        }
+      }
+    },
+    "abort": {
+      "no_secrets": "Es sind noch keine Secrets angelegt.",
+      "unknown_secret": "Das Secret existiert nicht mehr."
+    },
+    "error": {
+      "name_required": "Bitte einen Namen angeben.",
+      "secret_required": "Bitte einen Wert angeben."
+    }
+  },
+  "services": {
+    "decrypt": {
+      "name": "Entschlüsseln",
+      "description": "Gibt den entschlüsselten Wert eines Secrets zurück. Der Wert wird nur als Service-Antwort geliefert und nirgendwo gespeichert.",
+      "fields": {
+        "entity_id": {
+          "name": "Secret-Entität",
+          "description": "Die Sensor-Entität des Secrets (Alternative zur Secret-ID)."
+        },
+        "secret_id": {
+          "name": "Secret-ID",
+          "description": "Interne ID des Secrets (Alternative zur Entität)."
+        }
+      }
+    }
+  }
+}
