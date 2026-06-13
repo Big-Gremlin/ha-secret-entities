@@ -7,6 +7,26 @@ Per secret you get one entity. Its state is the **encrypted value** — open the
 entity and that is all you ever see. The real value is only returned by the
 `secret_entities.decrypt` service.
 
+## Installation
+
+### HACS (recommended)
+
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Big-Gremlin&repository=ha-secret-entities&category=integration)
+
+1. HACS → Integrations → ⋮ → *Custom repositories*
+2. Add the repository URL, category *Integration*
+3. Install *Secret Entities* and restart Home Assistant
+
+### Manual
+
+Copy `custom_components/secret_entities/` into the `config/custom_components/` folder of your Home Assistant instance and restart HA.
+
+## Setup
+
+*Settings* → *Devices & Services* → *Add integration* → **Secret Entities**. Manage secrets via the integration's *Configure* (options) screen.
+
 ## How it works
 
 - You add a secret in the integration's **options** (name + value).
@@ -73,26 +93,6 @@ In other words: it stops the value from being *visible at a glance* (in entity
 state, history, logbook, shared dashboards), but it does not protect against an
 attacker who already has filesystem or full API access. Treat `.storage` with
 the same care as `secrets.yaml`.
-
-## Installation
-
-### HACS (recommended)
-
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
-
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Big-Gremlin&repository=ha-secret-entities&category=integration)
-
-1. HACS → Integrations → ⋮ → *Custom repositories*
-2. Add the repository URL, category *Integration*
-3. Install *Secret Entities* and restart Home Assistant
-
-### Manual
-
-Copy `custom_components/secret_entities/` into the `config/custom_components/` folder of your Home Assistant instance and restart HA.
-
-## Setup
-
-*Settings* → *Devices & Services* → *Add integration* → **Secret Entities**. Manage secrets via the integration's *Configure* (options) screen.
 
 ## Development
 
